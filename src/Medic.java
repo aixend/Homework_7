@@ -1,11 +1,25 @@
-public class Medic extends Hero{
-    public int healPoints=50;
+public class Medic extends Hero {
+    public int healPoints;
 
-    public String increaseExperience(){
-        int part = (((10*healPoints)/100)+healPoints);
-        return  "healpoints: " + healPoints + " увеличился на 10%: " + part;
-
+    public Medic(int healPoints) {
+        this.healPoints = healPoints;
     }
+
+    public int getHealPoints() {
+        return healPoints;
+    }
+
+    public void setHealPoints(int healPoints) {
+        this.healPoints = healPoints;
+    }
+
+    public String increaseExperience() {
+        System.out.println(healPoints * 0.1);
+        setHealPoints((int) (getHealPoints() + healPoints * 0.1));
+
+        return null;
+    }
+
 
 
 
